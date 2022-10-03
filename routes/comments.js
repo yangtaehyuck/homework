@@ -19,7 +19,7 @@ router.get("/comments", async (req, res) => {
   const commentall = await Comment.find()
   const a = commentall.map((commentall) => {
     return {
-      postId: commentall._id,
+      commentId: commentall._id,
       user: commentall.user,
       comment: commentall.comment,
       createdAt: commentall.createdAt
