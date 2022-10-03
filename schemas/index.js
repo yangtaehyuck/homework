@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // 설치한 몽고디비에 접근, 에러가 있으면 에러 말하기
 const connect = () => {
 mongoose
-.connect("mongodb://127.0.0.1/spa_mall")  //127.0.0.1 은 몽고디비 아이피주소임
+.connect("mongodb://127.0.0.1/homework")  //127.0.0.1 은 몽고디비 아이피주소임
 .catch(err => console.log(err));
 };
 

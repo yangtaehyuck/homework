@@ -3,11 +3,13 @@ const app = express()
 const port = 3000
 const postsRouter = require('./routes/posts')
 const commentsRouter = require('./routes/comments')
+const connect = require("./schemas/index")
+connect()
 
 // app.use(express.json()); //body parser Middleware 를 쓰기위한 문법이다   =>     req.body를 사용하기위해서
 //전역 미들 웨어 => 모든 미들웨어에 적용         req에 들어있는 body를 볼때 사용
-
-app.use("/posts", [postsRouter, commentsRouter])
+app.use(express.json())    //body-parser 를 사용하기위해 선언함
+app.use([postsRouter, commentsRouter])
 
 
 //localhost:3000 -> localhost:3000/api/뒤에 작성한곳으로 감
