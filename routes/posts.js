@@ -1,6 +1,5 @@
 const express = require("express")
 const router = express.Router()
-
 const Post = require("../schemas/post");
 
 
@@ -9,7 +8,7 @@ router.post("/posts", async (req, res) => {
   const {num, user, password, title, content } = req.body
   
   let now = new Date()
-  await Post.create({num: num ,user : user, password : password, title : title, content : content, createdAt: now })
+  await Post.create({num: num, user : user, password : password, title : title, content : content, createdAt: now })
   console.log(req.body)
   res.send({result:"message : 게시글을 생성하였습니다."})
 })
@@ -26,7 +25,6 @@ router.get("/posts", async (req, res) => {
       createdAt: postall[i].createdAt
     })
   }
-
   res.json(lookpost) 
 
 })

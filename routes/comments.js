@@ -6,12 +6,9 @@ const Comment = require("../schemas/comment");
 //댓글 생성
 router.post("/comments", async (req, res) => {
   const { num, user, password, comment } = req.body
-  
   let now = new Date()
   await Comment.create({num: num, user : user, password : password, comment : comment, createdAt: now })
   console.log(req.body)
-
-
   res.send({result:"message : 댓글을 생성하였습니다."})
 })
 //댓글 목록 조회
